@@ -1,15 +1,32 @@
 <script lang="ts">
-	import { BottomNav, BottomNavItem } from 'flowbite-svelte';
-	import { HomeOutline, NewspapperOutline, UsersGroupOutline, UsersOutline, RectangleListOutline } from 'flowbite-svelte-icons';
-	import { Sidebar, SidebarGroup, SidebarItem, SidebarWrapper } from 'flowbite-svelte';
+	// import { HomeOutline, NewspapperOutline, UsersGroupOutline, UsersOutline, RectangleListOutline } from 'flowbite-svelte-icons';
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, DarkMode } from 'flowbite-svelte';
 
 	import { page } from '$app/stores';
+	let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
 	$: activeUrl = $page.url.pathname;
 
 	import '../app.pcss';
 </script>
 
-<nav class="desktop-navbar">
+<Navbar>
+	<NavBrand href="/">
+	  <img src="https://placehold.co/200x80" class="me-3 h-6 sm:h-9" alt="Confronti Logo" />
+	</NavBrand>
+	<div class="flex md:order-2">
+		<DarkMode {btnClass} />
+	  <NavHamburger />
+	</div>
+	<NavUl class="order-1">
+	  <NavLi href="/" active={true}>Home</NavLi>
+	  <NavLi href="/chi-siamo">Chi siamo</NavLi>
+	  <NavLi href="/programma">Programma</NavLi>
+	  <NavLi href="/candidati">Candidati</NavLi>
+	  <NavLi href="/notizie">Notizie</NavLi>
+	</NavUl>
+  </Navbar>
+
+<!-- <nav class="desktop-navbar">
 	<Sidebar {activeUrl}>
 		<SidebarWrapper>
 			<SidebarGroup>
@@ -51,34 +68,12 @@
 			</SidebarGroup>
 		</SidebarWrapper>
 	</Sidebar>
-</nav>
+</nav> -->
 <main class="container mb-6">
 	<slot />
 </main>
 
-<!-- <BottomNav {activeUrl} position="fixed" classInner="grid-cols-4">
-	<BottomNavItem btnName="Home" href="/">
-		<HomeOutline
-			class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
-		/>
-	</BottomNavItem>
-	<BottomNavItem btnName="Candidati" href="/candidati">
-		<UsersGroupOutline
-			class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
-		/>
-	</BottomNavItem>
-	<BottomNavItem btnName="Notizie" href="/notizie">
-		<NewspapperOutline
-			class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500"
-		/>
-	</BottomNavItem>
-</BottomNav> -->
-
 <style>
-  .desktop-navbar {
-    position: fixed;
-  }
-
   main {
     margin-left: auto;
     margin-right: auto;
