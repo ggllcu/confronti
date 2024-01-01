@@ -23,6 +23,7 @@
 	  <NavLi href="/programma">Programma</NavLi>
 	  <NavLi href="/candidati">Candidati</NavLi>
 	  <NavLi href="/notizie">Notizie</NavLi>
+	  <NavLi href="/eventi">Eventi</NavLi>
 	</NavUl>
   </Navbar>
 

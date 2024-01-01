@@ -6,7 +6,7 @@
     export let data;
 </script>
  
-<div>
+<div class="list-container">
     {#each data.stories as story}
     <Card img={story.content.image.filename} reverse={vCard} class="mb-4">
         <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{story.content.title}</h1>
