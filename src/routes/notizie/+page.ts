@@ -7,7 +7,6 @@ export async function load({ parent }) {
             starts_with: "notizie"
         });
 
-        console.log(dataStory.data.stories[0])
         return {
             stories: dataStory.data.stories
         };

@@ -1,0 +1,22 @@
+.rich-text p {
+    margin-bottom: 0.5rem;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px; /* Adjust the gap between posts */
+    list-style: none;
+    padding: 0;
+    margin: 20px;
+}
+
+.list-container .card:first-of-type {
+    // border-radius: 100px;
+    grid-column: 1 / -1
+}
+
+.horizontal-card {
+    width: 100%;
+    max-width: inherit;
+  }

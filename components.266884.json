@@ -1,0 +1,323 @@
+{
+  "components": [
+    {
+      "name": "Candidati",
+      "display_name": null,
+      "created_at": "2023-12-12T19:26:19.715Z",
+      "updated_at": "2023-12-14T21:31:38.519Z",
+      "id": 5028068,
+      "schema": {
+        "title": {
+          "type": "text",
+          "display_name": "Nome e Cognome",
+          "pos": 0,
+          "key": "name"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 1,
+          "key": "image",
+          "display_name": "Foto"
+        },
+        "intro": {
+          "type": "textarea",
+          "pos": 2,
+          "display_name": "Introduzione"
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 3,
+          "key": "description"
+        },
+        "mayor": {
+          "type": "boolean",
+          "pos": 4,
+          "display_name": "Sindaco",
+          "key": "Sindaco"
+        },
+        "labels": {
+          "type": "options",
+          "source": "internal",
+          "datasource_slug": "etichette",
+          "pos": 5,
+          "key": "Etichette"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Candidati",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Chi siamo",
+      "display_name": null,
+      "created_at": "2023-12-13T11:16:05.167Z",
+      "updated_at": "2024-01-03T21:54:01.964Z",
+      "id": 5031240,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "key": "title",
+          "required": true
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 1,
+          "display_name": "Descrizione",
+          "key": "description",
+          "required": true
+        },
+        "steps": {
+          "type": "bloks",
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Tappa Timeline"
+          ],
+          "pos": 2,
+          "key": "Tappe",
+          "display_name": "Tappe",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Chi siamo",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Eventi",
+      "display_name": null,
+      "created_at": "2023-12-12T19:35:30.212Z",
+      "updated_at": "2024-01-04T16:00:35.163Z",
+      "id": 5028072,
+      "schema": {
+        "title": {
+          "type": "text",
+          "display_name": "Titolo",
+          "key": "title",
+          "pos": 0
+        },
+        "description": {
+          "type": "richtext",
+          "key": "description",
+          "pos": 1
+        },
+        "image": {
+          "type": "asset",
+          "key": "image",
+          "pos": 2,
+          "display_name": "Foto",
+          "filetypes": []
+        },
+        "date": {
+          "type": "datetime",
+          "key": "date",
+          "pos": 3,
+          "required": true
+        },
+        "place": {
+          "type": "text",
+          "key": "place",
+          "pos": 4,
+          "display_name": "Luogo"
+        },
+        "asset": {
+          "type": "asset",
+          "display_name": "Allegato",
+          "key": "Allegato",
+          "pos": 5
+        },
+        "link": {
+          "type": "multilink"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Eventi",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "News",
+      "display_name": null,
+      "created_at": "2023-12-12T19:37:04.688Z",
+      "updated_at": "2023-12-14T21:25:05.164Z",
+      "id": 5028105,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "display_name": "Titolo",
+          "key": "title"
+        },
+        "date": {
+          "type": "datetime",
+          "pos": 1,
+          "key": "date",
+          "display_name": "Data"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "key": "Foto",
+          "display_name": "Foto"
+        },
+        "intro": {
+          "type": "textarea",
+          "pos": 3,
+          "display_name": "Introduzione",
+          "key": "intro"
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 4,
+          "key": "description",
+          "display_name": "Descrizione"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "News",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Programma",
+      "display_name": null,
+      "created_at": "2024-01-04T08:20:50.143Z",
+      "updated_at": "2024-01-04T08:31:29.836Z",
+      "id": 5115483,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "key": "title",
+          "required": true
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 1,
+          "display_name": "Descrizione",
+          "key": "description",
+          "required": true
+        },
+        "sections": {
+          "type": "bloks",
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Sezione Programma"
+          ],
+          "pos": 2,
+          "key": "Tappe",
+          "display_name": "Sezioni",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Programma",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Sezione Programma",
+      "display_name": null,
+      "created_at": "2023-12-12T19:41:16.175Z",
+      "updated_at": "2024-01-04T09:02:04.143Z",
+      "id": 5028113,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "content": {
+          "type": "richtext"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Sezione Programma",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Tappa Timeline",
+      "display_name": null,
+      "created_at": "2023-12-12T19:46:50.115Z",
+      "updated_at": "2024-01-04T08:22:22.898Z",
+      "id": 5028211,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "key": "title"
+        },
+        "date": {
+          "type": "text",
+          "pos": 1,
+          "display_name": "Data",
+          "key": "date"
+        },
+        "description": {
+          "type": "textarea",
+          "pos": 2,
+          "key": "Descrizione",
+          "display_name": "Descrizione"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Tappa Timeline",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    }
+  ]
+}

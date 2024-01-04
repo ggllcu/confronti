@@ -1,24 +1,26 @@
 <script lang="ts">
-	// import { HomeOutline, NewspapperOutline, UsersGroupOutline, UsersOutline, RectangleListOutline } from 'flowbite-svelte-icons';
-	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, DarkMode } from 'flowbite-svelte';
+	import "../app.pcss";
+    // import { HomeOutline, NewspapperOutline, UsersGroupOutline, UsersOutline, RectangleListOutline } from 'flowbite-svelte-icons';
+    import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, DarkMode } from 'flowbite-svelte';
 
-	import { page } from '$app/stores';
-	let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
-	$: activeUrl = $page.url.pathname;
+    import { page } from '$app/stores';
+    let btnClass = 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-xl p-2';
+    $: activeUrl = $page.url.pathname;
 
-	import '../app.pcss';
+    import '../app.pcss';
+    import '../app.scss';
 </script>
 
 <Navbar>
 	<NavBrand href="/">
-	  <img src="https://placehold.co/200x80" class="me-3 h-6 sm:h-9" alt="Confronti Logo" />
+	  <img src="https://placehold.co/200x80" class="me-3 h-6 sm:h-9" alt="Confronti Logo">
 	</NavBrand>
 	<div class="flex md:order-2">
-		<DarkMode {btnClass} />
-	  <NavHamburger />
+		<DarkMode {btnClass}></DarkMode>
+	  <NavHamburger></NavHamburger>
 	</div>
 	<NavUl class="order-1">
-	  <NavLi href="/" active={true}>Home</NavLi>
+	  <NavLi href="/" active="{true}">Home</NavLi>
 	  <NavLi href="/chi-siamo">Chi siamo</NavLi>
 	  <NavLi href="/programma">Programma</NavLi>
 	  <NavLi href="/candidati">Candidati</NavLi>
@@ -71,7 +73,7 @@
 	</Sidebar>
 </nav> -->
 <main class="container mb-6">
-	<slot />
+	<slot></slot>
 </main>
 
 <style>

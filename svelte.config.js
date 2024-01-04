@@ -1,15 +1,12 @@
-import adapter from '@sveltejs/adapter-netlify';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import adapter from '@sveltejs/adapter-netlify';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: [
-		vitePreprocess({})
-	],
-
-	
+	preprocess: [preprocess({}), vitePreprocess({})],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
@@ -18,6 +15,7 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			'@storyblok/svelte': './node_modules/@storyblok/svelte',
+			'@types': './src/types'
 		}
 	}
 };
