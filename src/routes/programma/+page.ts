@@ -17,6 +17,8 @@ export async function load({ parent, params }) {
 				story: dataStory.data.story 
 			}
 
+			console.log(pageData)
+
 			return pageData
 	} catch (e) {
 		console.log('e:', e);

@@ -1,21 +1,49 @@
 <script lang="ts">
-  	import { renderRichText } from '@storyblok/svelte';
-    import { AccordionItem, Accordion, Hr } from 'flowbite-svelte';
+	import { createAccordion, melt } from '@melt-ui/svelte';
+	import { slide } from 'svelte/transition';
+	import { renderRichText } from '@storyblok/svelte';
 
-    export let data;
+  const {
+    elements: { content, item, trigger, root },
+    helpers: { isSelected },
+  } = createAccordion();
+
+	export let data;
 </script>
 
 <div>
-    <h1 class="mb-2 text-6xl font-bold tracking-tight text-gray-900 dark:text-white">{data.story?.content.title}</h1>
-    <div class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">{@html renderRichText(data.story?.content.description)}</div>
-    <Hr classHr="my-8" />
+	<h1 class="title is-2">{data.story?.content.title}</h1>
+	<div class="content">{@html renderRichText(data.story?.content.description)}</div>
 
-    <Accordion>
-    {#each data.story?.content.sections ?? [] as section}
-        <AccordionItem>
-          <span slot="header">{section.title}</span>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">{@html renderRichText(section.content)}</p>
-        </AccordionItem>
+	<hr />
+
+  <div {...$root}>
+		{#each data.story?.content.sections ?? [] as section, i}
+    {@const props = { value: section._uid }}
+    <div
+      class="block"
+      use:melt={$item(props)}
+    >
+      <div class="card">
+        <header class="card-header has-background-primary" use:melt={$trigger(props)}>
+          <p class="card-header-title">
+            {section.title}
+          </p>
+        </header>
+        {#if $isSelected(section._uid)}
+          <div
+            use:melt={$content(props)}
+            transition:slide
+          >
+            <div class="card-content">
+              <div class="content">
+                {@html renderRichText(data.story?.content.description)}
+              </div>
+            </div>
+          </div>
+        {/if}
+      </div>
+    </div>
     {/each}
-    </Accordion>
   </div>
+</div>

@@ -35,7 +35,9 @@ export interface CandidatiStoryblok {
 export interface ChiSiamoStoryblok {
   title: string;
   description: RichtextStoryblok;
+  starting_label?: string;
   steps: TappaTimelineStoryblok[];
+  ending_label?: string;
   _uid: string;
   component: "Chi siamo";
   [k: string]: any;

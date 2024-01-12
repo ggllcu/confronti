@@ -1,36 +1,91 @@
 <script lang="ts">
+	import { createTabs, melt } from '@melt-ui/svelte';
+	import { cubicInOut } from 'svelte/easing';
+	import { crossfade } from 'svelte/transition';
 	import { renderRichText } from '@storyblok/svelte';
-    import { Card, Button, Tabs, TabItem } from 'flowbite-svelte';
-    import { ArrowRightOutline } from 'flowbite-svelte-icons';
 
-    export let data;
+	const {
+		elements: { root, list, content, trigger },
+		states: { value }
+	} = createTabs({
+		defaultValue: 'incoming'
+	});
+
+	const triggers = [
+		{ id: 'incoming', title: 'In arrivo' },
+		{ id: 'passed', title: 'Passati' }
+	];
+
+	const [send, receive] = crossfade({
+		duration: 250,
+		easing: cubicInOut
+	});
+
+	export let data;
 </script>
 
-<div>  
-  <Tabs style="underline">
-    <TabItem open title="In arrivo">
-        {#each data.stories?.incoming ?? [] as story}
-        <Card img={story.content.image?.filename} horizontal class="mb-4 horizontal-card">
-            <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{story.content.title}</h1>
-            <h5 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">{story.content.date}</h5>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">{@html renderRichText(story.content.description)}</p>
-            <Button href={story.full_slug}>
-                Scopri di piu' <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
-              </Button>
-          </Card>
-        {/each}
-    </TabItem>
-    <TabItem title="Passati">
-        {#each data.stories?.passed ?? [] as story}
-        <Card img={story.content.image?.filename} horizontal class="mb-4 horizontal-card">
-          <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{story.content.title}</h1>
-          <h5 class="mb-2 text-l font-bold tracking-tight text-gray-900 dark:text-white">{story.content.date}</h5>
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">{@html renderRichText(story.content.description)}</p>
-          <Button href={story.full_slug}>
-              Scopri di piu' <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
-            </Button>
-        </Card>
-        {/each}
-    </TabItem>
-  </Tabs>
+<div use:melt={$list} aria-label="Eventi Confronti">
+	{#each triggers as triggerItem}
+		<button use:melt={$trigger(triggerItem.id)}>
+			{triggerItem.title}
+			{#if $value === triggerItem.id}
+				<div in:send={{ key: 'trigger' }} out:receive={{ key: 'trigger' }} />
+			{/if}
+		</button>
+	{/each}
+</div>
+<div use:melt={$content('incoming')}>
+	{#each data.stories?.incoming ?? [] as story}
+  <div class="column is-half">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-3by2">
+          <img src={story.content.image?.filename} alt={story.content.image?.filename} />
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h2 class="title is-4">{story.content.title}</h2>
+          <p class="subtitle is-5">{story.content.date}</p>
+          <p class="subtitle is-5">{story.content.place}</p>
+          {@html renderRichText(story.content.description)}
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href={story.full_slug} class="card-footer-item">Scopri di più</a>
+      </footer>
+    </div>
+  </div>
+			{/each}
+</div>
+<div use:melt={$content('passed')}>
+	{#each data.stories?.passed ?? [] as story}
+  <div class="column is-half">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-3by2">
+          <img src={story.content.image?.filename} alt={story.content.image?.filename} />
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <h2 class="title is-4">{story.content.title}</h2>
+          <p class="subtitle is-5">{story.content.date}</p>
+          <p class="subtitle is-5">{story.content.place}</p>
+          {@html renderRichText(story.content.description)}
+        </div>
+      </div>
+      <footer class="card-footer">
+        <a href={story.full_slug} class="card-footer-item">
+          Scopri di più
+        </a>
+        {#if story?.content.asset?.filename}
+        <a href={story?.content.asset?.filename} class="card-footer-item" target="_blank">
+            Scarica allegato
+        </a>
+        {/if}
+      </footer>
+    </div>
+  </div>
+			{/each}
 </div>

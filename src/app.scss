@@ -1,22 +1,11 @@
-.rich-text p {
-    margin-bottom: 0.5rem;
-}
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bulma */
+@import 'bulma/sass/utilities/_all';
+@import 'bulma/sass/base/_all';
+@import 'bulma/sass/elements/_all';
+@import 'bulma/sass/form/_all';
+@import 'bulma/sass/components/_all';
+@import 'bulma/sass/grid/_all';
+@import 'bulma/sass/helpers/_all';
+@import 'bulma/sass/layout/_all';
 
-.list-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px; /* Adjust the gap between posts */
-    list-style: none;
-    padding: 0;
-    margin: 20px;
-}
-
-.list-container .card:first-of-type {
-    // border-radius: 100px;
-    grid-column: 1 / -1
-}
-
-.horizontal-card {
-    width: 100%;
-    max-width: inherit;
-  }
+@import 'bulma-timeline';

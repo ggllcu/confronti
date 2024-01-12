@@ -1,19 +1,25 @@
 <script lang="ts">
-    import { Card, Button, Toggle } from 'flowbite-svelte';
-    import { ArrowRightOutline } from 'flowbite-svelte-icons';
-    let vCard = false;
-
     export let data;
 </script>
- 
-<div class="list-container">
-    {#each data.stories as story}
-    <Card img={story.content.image.filename} reverse={vCard} class="mb-4">
-        <h1 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{story.content.title}</h1>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">{story.content.intro}</p>
-        <Button href={story.full_slug}>
-          Scopri di piu' <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
-        </Button>
-      </Card>
-    {/each}
+<div class="columns is-multiline">
+	{#each data.stories ?? [] as story}
+		<div class="column is-half">
+			<div class="card">
+				<div class="card-image">
+					<figure class="image is-3by2">
+						<img src={story.content.image?.filename} alt={story.content.image?.filename} />
+					</figure>
+				</div>
+				<div class="card-content">
+					<div class="content">
+						<h2 class="title is-4">{story.content.title}</h2>
+						<p>{story.content.intro}</p>
+					</div>
+				</div>
+				<footer class="card-footer">
+					<a href={story.full_slug} class="card-footer-item">Scopri di più</a>
+				</footer>
+			</div>
+		</div>
+	{/each}
 </div>

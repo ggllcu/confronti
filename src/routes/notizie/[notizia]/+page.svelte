@@ -1,16 +1,18 @@
 <script lang="ts">
 	import { renderRichText } from '@storyblok/svelte';
-    import { Card, Blockquote } from 'flowbite-svelte';
-	$: resolvedRichText = renderRichText(data.story.content.description);
-
 
 	export let data;
 </script>
 
 <article>
-	<Card img={data.story.content.image.filename} class="mb-4" size="xl">
-        <h1 class="mb-2 text-6xl font-bold tracking-tight text-gray-900 dark:text-white">{data.story.content.title}</h1>
-        <Blockquote bg italic={false} class="p-4 my-4">{data.story.content.intro}</Blockquote>
-        <div class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight rich-text">{@html resolvedRichText}</div>
-    </Card>
+	<figure class="image is-3by2">
+		<img src={data.story?.content.image?.filename} alt={data.story?.content.image?.alt} />
+	</figure>
+
+	<section class="content">
+		<h1 class="title is-2">{data.story?.content.title}</h1>
+		<blockquote>{data.story?.content.intro}</blockquote>
+
+		<p>{@html renderRichText(data.story?.content.description)}</p>
+	</section>
 </article>
