@@ -11,7 +11,8 @@ export async function load({ parent }) {
 
         const dataStory = await storyblokApi.get("cdn/stories/", {
             version: "draft",
-            starts_with: "candidati"
+            starts_with: "candidati",
+            content_type: "Candidati"
         });
 
         const pageData: PageData = {

@@ -59,7 +59,7 @@
       "name": "Chi siamo",
       "display_name": null,
       "created_at": "2023-12-13T11:16:05.167Z",
-      "updated_at": "2024-01-12T17:09:06.191Z",
+      "updated_at": "2024-01-12T22:53:46.725Z",
       "id": 5031240,
       "schema": {
         "title": {
@@ -68,16 +68,21 @@
           "key": "title",
           "required": true
         },
+        "image": {
+          "type": "asset",
+          "pos": 1,
+          "display_name": "Immagine"
+        },
         "description": {
           "type": "richtext",
-          "pos": 1,
+          "pos": 2,
           "display_name": "Descrizione",
           "key": "description",
           "required": true
         },
         "starting_label": {
           "type": "text",
-          "pos": 2,
+          "pos": 3,
           "display_name": "Etichetta iniziale"
         },
         "steps": {
@@ -88,14 +93,15 @@
           "component_whitelist": [
             "Tappa Timeline"
           ],
-          "pos": 3,
+          "pos": 4,
           "key": "Tappe",
           "display_name": "Tappe",
           "required": true
         },
         "ending_label": {
           "type": "text",
-          "display_name": "Etichetta finale"
+          "display_name": "Etichetta finale",
+          "pos": 5
         }
       },
       "image": null,
@@ -221,10 +227,42 @@
       "icon": null
     },
     {
+      "name": "Page Settings",
+      "display_name": "Impostazioni di pagina",
+      "created_at": "2024-01-12T22:10:43.511Z",
+      "updated_at": "2024-01-12T22:15:15.435Z",
+      "id": 5163593,
+      "schema": {
+        "title": {
+          "type": "text",
+          "display_name": "Titolo"
+        },
+        "image": {
+          "type": "asset",
+          "display_name": "Immagine"
+        },
+        "description": {
+          "type": "richtext",
+          "display_name": "Descrizione"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Impostazioni di pagina",
+      "component_group_uuid": null,
+      "color": "#395ece",
+      "icon": "block-text-c"
+    },
+    {
       "name": "Programma",
       "display_name": null,
       "created_at": "2024-01-04T08:20:50.143Z",
-      "updated_at": "2024-01-04T08:31:29.836Z",
+      "updated_at": "2024-01-12T22:54:08.859Z",
       "id": 5115483,
       "schema": {
         "title": {
@@ -233,9 +271,14 @@
           "key": "title",
           "required": true
         },
+        "image": {
+          "type": "asset",
+          "pos": 1,
+          "display_name": "Immagine"
+        },
         "description": {
           "type": "richtext",
-          "pos": 1,
+          "pos": 2,
           "display_name": "Descrizione",
           "key": "description",
           "required": true
@@ -248,7 +291,7 @@
           "component_whitelist": [
             "Sezione Programma"
           ],
-          "pos": 2,
+          "pos": 3,
           "key": "Tappe",
           "display_name": "Sezioni",
           "required": true

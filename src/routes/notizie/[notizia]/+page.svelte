@@ -5,7 +5,7 @@
 </script>
 
 <article>
-	<figure class="image is-3by2">
+	<figure class="image is-2by1 block">
 		<img src={data.story?.content.image?.filename} alt={data.story?.content.image?.alt} />
 	</figure>
 

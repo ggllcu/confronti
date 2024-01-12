@@ -24,15 +24,17 @@
 	export let data;
 </script>
 
-<div use:melt={$list} aria-label="Eventi Confronti">
+<div use:melt={$list} aria-label="Eventi Confronti" class="tabs is-centered">
+  <ul>
 	{#each triggers as triggerItem}
-		<button use:melt={$trigger(triggerItem.id)}>
-			{triggerItem.title}
+		<li use:melt={$trigger(triggerItem.id)} class={$value === triggerItem.id ? "is-active" : ""}>
+			<a>{triggerItem.title}</a>
 			{#if $value === triggerItem.id}
 				<div in:send={{ key: 'trigger' }} out:receive={{ key: 'trigger' }} />
 			{/if}
-		</button>
+    </li>
 	{/each}
+</ul>
 </div>
 <div use:melt={$content('incoming')}>
 	{#each data.stories?.incoming ?? [] as story}

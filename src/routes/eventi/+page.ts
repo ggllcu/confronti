@@ -14,7 +14,8 @@ export async function load({ parent }) {
 
         const dataStory = await storyblokApi.get("cdn/stories/", {
             version: "draft",
-            starts_with: "eventi"
+            starts_with: "eventi",
+            content_type: "Eventi"
         });
 
         const passedEvents: StoryblokStory<EventiStoryblok>[] = dataStory.data.stories.filter((item: StoryblokStory<EventiStoryblok>) => new Date(item.content.date) < new Date())

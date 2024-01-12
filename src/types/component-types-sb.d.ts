@@ -34,6 +34,7 @@ export interface CandidatiStoryblok {
 
 export interface ChiSiamoStoryblok {
   title: string;
+  image?: AssetStoryblok;
   description: RichtextStoryblok;
   starting_label?: string;
   steps: TappaTimelineStoryblok[];
@@ -117,8 +118,18 @@ export interface NewsStoryblok {
   [k: string]: any;
 }
 
+export interface PageSettingsStoryblok {
+  title?: string;
+  image?: AssetStoryblok;
+  description?: RichtextStoryblok;
+  _uid: string;
+  component: "Page Settings";
+  [k: string]: any;
+}
+
 export interface ProgrammaStoryblok {
   title: string;
+  image?: AssetStoryblok;
   description: RichtextStoryblok;
   sections: SezioneProgrammaStoryblok[];
   _uid: string;

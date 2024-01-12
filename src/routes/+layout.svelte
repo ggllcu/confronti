@@ -1,20 +1,23 @@
 <script lang="ts">
-  import "../app.scss";
-  import { page } from '$app/stores';
-  import Navbar from '../components/Navbar.svelte';
+	import '../app.scss';
+	import { page } from '$app/stores';
+	import Navbar from '../components/Navbar.svelte';
 </script>
 
-
-
-<main class="container mb-6">
-  <Navbar></Navbar>
-<slot></slot>
+<Navbar></Navbar>
+<main class="container is-max-desktop">
+	<slot />
 </main>
+<footer class="footer">
+	<div class="content has-text-centered">
+		<p>
+			<strong>Confronti 2024</strong> by <a href="https://lucaguglielmi.it">LG</a>.
+		</p>
+	</div>
+</footer>
 
 <style>
   main {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 960px;
+    padding: 1.5rem;
   }
 </style>

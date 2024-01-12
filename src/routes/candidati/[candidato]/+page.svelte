@@ -5,7 +5,7 @@
 </script>
 
 <article>
-	<section class="intro">
+	<section class="intro block">
 		<div class="container">
 			<div class="columns">
 				<div class="column is-two-thirds">
