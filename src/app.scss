@@ -1,11 +1,24 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bulma */
 @import 'bulma/sass/utilities/_all';
 @import 'bulma/sass/base/_all';
-@import 'bulma/sass/elements/_all';
-@import 'bulma/sass/form/_all';
-@import 'bulma/sass/components/_all';
-@import 'bulma/sass/grid/_all';
+// @import 'bulma/sass/elements/_all';
+// @import 'bulma/sass/form/_all';
+// @import 'bulma/sass/components/_all';
+// @import 'bulma/sass/grid/_all';
 @import 'bulma/sass/helpers/_all';
-@import 'bulma/sass/layout/_all';
+// @import 'bulma/sass/layout/_all';
+
+@import 'bulma/sass/components/navbar';
+@import 'bulma/sass/components/card';
+@import 'bulma/sass/components/tabs';
+@import 'bulma/sass/elements/container';
+@import 'bulma/sass/elements/content';
+@import 'bulma/sass/elements/image';
+@import 'bulma/sass/elements/other';
+@import 'bulma/sass/elements/title';
+@import 'bulma/sass/elements/tag';
+@import 'bulma/sass/grid/columns';
+@import 'bulma/sass/layout/section';
+@import 'bulma/sass/layout/footer';
 
 @import 'bulma-timeline';
