@@ -5,13 +5,13 @@
 </script>
 
 <Navbar></Navbar>
-<main class="container is-max-desktop">
+<main class="container is-max-widescreen">
 	<slot />
 </main>
 <footer class="footer">
 	<div class="content has-text-centered">
 		<p>
-			<strong>Confronti 2024</strong> by <a href="https://lucaguglielmi.it">LG</a>.
+			<strong>Confronti 2024</strong>.
 		</p>
 	</div>
 </footer>

@@ -1,24 +1,49 @@
-/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bulma */
-@import 'bulma/sass/utilities/_all';
-@import 'bulma/sass/base/_all';
-// @import 'bulma/sass/elements/_all';
-// @import 'bulma/sass/form/_all';
-// @import 'bulma/sass/components/_all';
-// @import 'bulma/sass/grid/_all';
-@import 'bulma/sass/helpers/_all';
-// @import 'bulma/sass/layout/_all';
+// @use "bulma/sass/utilities" with (
+//   $family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";, sans-serif',
+// );
 
-@import 'bulma/sass/components/navbar';
-@import 'bulma/sass/components/card';
-@import 'bulma/sass/components/tabs';
-@import 'bulma/sass/elements/container';
-@import 'bulma/sass/elements/content';
-@import 'bulma/sass/elements/image';
-@import 'bulma/sass/elements/other';
-@import 'bulma/sass/elements/title';
-@import 'bulma/sass/elements/tag';
-@import 'bulma/sass/grid/columns';
-@import 'bulma/sass/layout/section';
-@import 'bulma/sass/layout/footer';
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without useing */ /* use only what you need from Bulma */
+@use "bulma/sass/base";
+@use "bulma/sass/themes";
+@use 'bulma/sass/helpers';
 
-@import 'bulma-timeline';
+
+@use 'bulma/sass/components/navbar';
+@use 'bulma/sass/components/card';
+@use 'bulma/sass/components/tabs';
+@use 'bulma/sass/layout/container';
+@use 'bulma/sass/elements/content';
+@use 'bulma/sass/elements/image';
+@use 'bulma/sass/elements/block';
+@use 'bulma/sass/elements/button';
+// @use 'bulma/sass/elements/other';
+@use 'bulma/sass/elements/title';
+@use 'bulma/sass/elements/tag';
+@use 'bulma/sass/grid/columns';
+@use 'bulma/sass/layout/section';
+@use 'bulma/sass/layout/footer';
+@use 'bulma/sass/layout/hero';
+
+// @use 'bulma-timeline';
+$bulma-primary:#007044;
+:root {
+    --bulma-primary:#007044;
+    // --bulma-primary-l:#007044;
+  }
+
+
+.svg-icon {
+    width: 1.5em;
+    height: 1.5em;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: #fff;
+  }
+  
+  .svg-icon circle {
+    stroke: #fff;
+    stroke-width: 1;
+  }

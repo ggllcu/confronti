@@ -20,7 +20,7 @@ export async function load({ parent }) {
 
         const passedEvents: StoryblokStory<EventiStoryblok>[] = dataStory.data.stories.filter((item: StoryblokStory<EventiStoryblok>) => new Date(item.content.date) < new Date())
         const incomingEvents: StoryblokStory<EventiStoryblok>[] = dataStory.data.stories.filter((item: StoryblokStory<EventiStoryblok>) => new Date(item.content.date) > new Date())
-        
+
         const pageData: PageData = {
             stories: {
                 passed: passedEvents,

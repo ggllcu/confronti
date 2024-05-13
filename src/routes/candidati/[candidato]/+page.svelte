@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { renderRichText } from '@storyblok/svelte';
+	// import { renderRichText } from '@storyblok/svelte';
 
 	export let data;
 </script>
@@ -18,7 +18,7 @@
 					<figure class="image is-square">
 						<img
 							class="is-rounded"
-							src={data.story?.content.image?.filename}
+							src={`${data.story.content.image?.filename}/m/352x352/smart`}
 							alt={data.story?.content.image?.alt}
 						/>
 					</figure>
@@ -28,7 +28,7 @@
 	</section>
 	<section class="content">
 		<div class="container">
-			<p>{@html renderRichText(data.story?.content.description)}</p>
+			<p>{data.story?.content.description}</p>
 		</div>
 	</section>
 </article>

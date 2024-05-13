@@ -2,7 +2,7 @@ import { apiPlugin, storyblokInit, useStoryblokApi } from "@storyblok/svelte"
 
 export async function load() {
     storyblokInit({
-      accessToken: "obMnqH1kXEpev0pJjWLWQQtt",
+      accessToken: "Q3BPyUi1r9J7u7BS4gFYggtt",
       use: [apiPlugin],
       apiOptions: {
         https: true,

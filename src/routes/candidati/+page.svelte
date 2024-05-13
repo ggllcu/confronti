@@ -8,7 +8,7 @@
 			<div class="card">
 				<div class="card-image">
 					<figure class="image is-3by2">
-						<img src={story.content.image?.filename} alt={story.content.image?.filename} />
+						<img src={`${story.content.image?.filename}/m/1104x736/smart`} alt={story.content.image?.filename} />
 					</figure>
 				</div>
 				<div class="card-content">
