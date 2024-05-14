@@ -26,7 +26,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="content">
+	<section class="section content">
 		<div class="container">
 			<p>{data.story?.content.description}</p>
 		</div>

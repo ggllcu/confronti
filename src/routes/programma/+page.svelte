@@ -24,14 +24,15 @@
 		alt={data.story?.content.image?.alt}
 	/>
 </figure>
-<section class="content">
+
+<section class="section content">
 	<h1 class="title is-1">{data.story?.content.title}</h1>
 	{@html renderRichText(data.story?.content.description)}
 </section>
 
 <hr />
 
-<section class="content">
+<section class="section content">
 	<div {...$root}>
 		{#each data.story?.content.sections ?? [] as section, i}
 			{@const id = { value: section._uid }}

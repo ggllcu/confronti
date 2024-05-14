@@ -18,7 +18,7 @@
 	/>
 </svelte:head>
 
-<main>
+<div>
 	<section id="title" class="section has-text-centered">
 		<h1 class="title is-1">{data.home?.content.title}</h1>
 		<h2 class="subtitle is-2">{data.home?.content.subtitle}</h2>
@@ -27,12 +27,12 @@
 	<section id="quote" class="section content is-medium has-background-primary">
 		<!-- <section id="hero" class="hero is-primary is-medium has-background-primary"> -->
 		<blockquote>
-				<p class="subtitle is-4 is-italic">
-					La vera forza di una società risiede nella sua capacità di inclusione e solidarietà.
-					Dobbiamo lavorare insieme per costruire un futuro migliore per ogni cittadino, senza
-					lasciare nessuno indietro, specialmente i piu' deboli ed emarginati.
-				</p>
-				<p class="subtitle has-text-right is-5">Tina Anselmi</p>
+			<p class="subtitle is-4 is-italic">
+				La vera forza di una società risiede nella sua capacità di inclusione e solidarietà.
+				Dobbiamo lavorare insieme per costruire un futuro migliore per ogni cittadino, senza
+				lasciare nessuno indietro, specialmente i piu' deboli ed emarginati.
+			</p>
+			<p class="subtitle has-text-right is-5">Tina Anselmi</p>
 		</blockquote>
 	</section>
 	<section id="home" class="section content">
@@ -95,4 +95,4 @@
 			<button class="button is-primary is-fullwidth">{data.events?.content.button}</button>
 		</a>
 	</section>
-</main>
+</div>

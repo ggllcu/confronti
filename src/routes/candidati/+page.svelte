@@ -10,7 +10,7 @@
 		alt={data.candidates?.content.image?.alt}
 	/>
 </figure>
-<section class="content">
+<section class="section content">
 	<h1 class="title is-1">{data.candidates?.content.title}</h1>
 	{@html renderRichText(data.candidates?.content.description)}
 </section>

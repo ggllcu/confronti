@@ -5,8 +5,8 @@
 </script>
 
 <Navbar></Navbar>
-<main class="container is-max-desktop">
-	<slot />
+<main class="container is-max-desktop has-background-white p-0">
+		<slot />
 </main>
 <footer class="footer">
 	<div class="content has-text-centered">

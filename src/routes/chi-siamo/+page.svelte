@@ -9,7 +9,7 @@
 	<img src={data.story?.content.image?.filename} alt={data.story?.content.image?.alt} />
 </figure>
 
-<section class="content">
+<section class="section content">
 	<h1 class="title is-1">{data.story?.content.title}</h1>
 	<p>{@html resolvedRichText}</p>
 
