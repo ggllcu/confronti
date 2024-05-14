@@ -18,21 +18,24 @@
 	/>
 </svelte:head>
 
-<main class="content">
-	<section id="hero" class="hero is-primary is-medium">
+<main>
+	<section id="title" class="section has-text-centered">
+		<h1 class="title is-1">{data.home?.content.title}</h1>
+		<h2 class="subtitle is-2">{data.home?.content.subtitle}</h2>
+	</section>
+
+	<section id="quote" class="section content is-medium has-background-primary">
 		<!-- <section id="hero" class="hero is-primary is-medium has-background-primary"> -->
-		<div class="hero-body">
-				<p class="title is-4 is-italic">
+		<blockquote>
+				<p class="subtitle is-4 is-italic">
 					La vera forza di una società risiede nella sua capacità di inclusione e solidarietà.
 					Dobbiamo lavorare insieme per costruire un futuro migliore per ogni cittadino, senza
 					lasciare nessuno indietro, specialmente i piu' deboli ed emarginati.
 				</p>
 				<p class="subtitle has-text-right is-5">Tina Anselmi</p>
-		</div>
+		</blockquote>
 	</section>
-	<section id="home" class="section">
-		<h1 class="title is-1">{data.home?.content.title}</h1>
-		<h2 class="subtitle is-2">{data.home?.content.subtitle}</h2>
+	<section id="home" class="section content">
 		<figure class="image is-3by2 block">
 			<img src={data.home?.content.image?.filename} alt={data.program?.content.image?.alt} />
 		</figure>
@@ -41,7 +44,7 @@
 		</p>
 	</section>
 
-	<section id="programma" class="section">
+	<section id="programma" class="section content">
 		<h2 class="title is-2">{data.program?.content.title}</h2>
 		<figure class="image is-2by1 block">
 			<img
@@ -61,7 +64,7 @@
 		</div>
 	</section>
 
-	<section id="candidati" class="section">
+	<section id="candidati" class="section content">
 		<h2 class="title is-2">{data.candidates?.content.title}</h2>
 		<figure class="image is-2by1 block">
 			<img
@@ -77,7 +80,7 @@
 		</a>
 	</section>
 
-	<section id="eventi" class="section">
+	<section id="eventi" class="section content">
 		<h2 class="title is-2">{data.events?.content.title}</h2>
 		<figure class="image is-2by1 block">
 			<img
