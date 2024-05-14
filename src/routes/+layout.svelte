@@ -5,7 +5,7 @@
 </script>
 
 <Navbar></Navbar>
-<main class="container is-max-widescreen">
+<main class="container is-max-desktop">
 	<slot />
 </main>
 <footer class="footer">
