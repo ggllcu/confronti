@@ -1,6 +1,19 @@
 <script lang="ts">
+	import { renderRichText } from '@storyblok/svelte';
+
 	export let data;
 </script>
+
+<figure class="image is-2by1 block">
+	<img
+		src={`${data.candidates?.content.image?.filename}/m/1104x552/smart`}
+		alt={data.candidates?.content.image?.alt}
+	/>
+</figure>
+<section class="content">
+	<h1 class="title is-1">{data.candidates?.content.title}</h1>
+	{@html renderRichText(data.candidates?.content.description)}
+</section>
 
 <div class="columns is-multiline">
 	{#each data.stories ?? [] as story}

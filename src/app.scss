@@ -1,8 +1,9 @@
-// @use "bulma/sass/utilities" with (
-//   $family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";, sans-serif',
-// );
+@use "bulma/sass/utilities" with (
+  $family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  $primary: #007044,
+);
 
-/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without useing */ /* use only what you need from Bulma */
+
 @use "bulma/sass/base";
 @use "bulma/sass/themes";
 @use 'bulma/sass/helpers';
@@ -25,12 +26,7 @@
 @use 'bulma/sass/layout/hero';
 
 // @use 'bulma-timeline';
-$bulma-primary:#007044;
-:root {
-    --bulma-primary:#007044;
-    // --bulma-primary-l:#007044;
-  }
-
+$primary:#007044;
 
 .svg-icon {
     width: 1.5em;

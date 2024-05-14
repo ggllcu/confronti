@@ -2,6 +2,8 @@
 	import { createTabs, melt } from '@melt-ui/svelte';
 	import { cubicInOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';
+	import { renderRichText } from '@storyblok/svelte';
+
 
 	const {
 		elements: { root, list, content, trigger },
@@ -23,6 +25,17 @@
 	export let data;
 </script>
 
+<figure class="image is-2by1 block">
+	<img
+		src={`${data.events?.content.image?.filename}/m/1104x552/smart`}
+		alt={data.events?.content.image?.alt}
+	/>
+</figure>
+<section class="content">
+	<h1 class="title is-1">{data.events?.content.title}</h1>
+	{@html renderRichText(data.events?.content.description)}
+</section>
+
 <div use:melt={$root}>
 	<div use:melt={$list} aria-label="Eventi Confronti" class="tabs is-centered">
 		<ul>
@@ -40,7 +53,7 @@
 		</ul>
 	</div>
 	<div use:melt={$content('incoming')}>
-		<div class="columns">
+		<div class="columns is-multiline">
 			{#each data.stories?.incoming ?? [] as story}
 				<div class="column is-half">
 					<div class="card">
@@ -54,7 +67,7 @@
 								<h2 class="title is-4">{story.content.title}</h2>
 								<p class="subtitle is-5">{story.content.date}</p>
 								<p class="subtitle is-5">{story.content.place}</p>
-								{story.content.description}
+								{@html renderRichText(story.content.description)}
 							</div>
 						</div>
 						<footer class="card-footer">
@@ -71,7 +84,7 @@
 		</div>
 	</div>
 	<div use:melt={$content('passed')}>
-		<div class="columns">
+		<div class="columns is-multiline">
 			{#each data.stories?.passed ?? [] as story}
 				<div class="column is-half">
 					<div class="card">
@@ -85,7 +98,7 @@
 								<h2 class="title is-4">{story.content.title}</h2>
 								<p class="subtitle is-5">{story.content.date}</p>
 								<p class="subtitle is-5">{story.content.place}</p>
-								{story.content.description}
+								{@html renderRichText(story.content.description)}
 							</div>
 						</div>
 						<footer class="card-footer">

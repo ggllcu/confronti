@@ -3,29 +3,38 @@ import type { ProgrammaStoryblok } from "../types/component-types-sb.d";
 import type { PageSettingsStoryblok } from "../types/component-types-sb.d";
 
 type PageData = {
-    program: StoryblokStory<ProgrammaStoryblok>
-    candidates: StoryblokStory<PageSettingsStoryblok>
+	home: StoryblokStory<ProgrammaStoryblok>
+	program: StoryblokStory<ProgrammaStoryblok>
+	candidates: StoryblokStory<PageSettingsStoryblok>
+	events: StoryblokStory<PageSettingsStoryblok>
 }
 
 export async function load({ parent, params }) {
 	try {
-			const { storyblokApi } = await parent();
-		   
-			const programDataStory = await storyblokApi.get(`cdn/stories/programma`, {
-			  version: "draft",
-			});
-			const candidateDataStory = await storyblokApi.get(`cdn/stories/candidati/settings`, {
-				version: "draft",
-			  });
+		const { storyblokApi } = await parent();
 
-			console.log(candidateDataStory)
+		const homeDataStory = await storyblokApi.get(`cdn/stories/home
+		`, {
+			version: "draft",
+		});
+		const programDataStory = await storyblokApi.get(`cdn/stories/programma`, {
+			version: "draft",
+		});
+		const candidateDataStory = await storyblokApi.get(`cdn/stories/candidati/settings`, {
+			version: "draft",
+		});
+		const eventsDataStory = await storyblokApi.get(`cdn/stories/eventi/settings`, {
+			version: "draft",
+		});
 
-			const pageData: PageData = {
-				program: programDataStory.data.story,
-				candidates: candidateDataStory.data.story
-			}
+		const pageData: PageData = {
+			home: homeDataStory.data.story,
+			program: programDataStory.data.story,
+			candidates: candidateDataStory.data.story,
+			events: eventsDataStory.data.story
+		}
 
-			return pageData
+		return pageData
 	} catch (e) {
 		console.log('e:', e);
 	}

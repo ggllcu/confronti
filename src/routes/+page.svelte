@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { renderRichText } from '@storyblok/svelte';
+
 	function createSlug(title) {
 		return title
 			.toLowerCase()
@@ -17,51 +19,38 @@
 </svelte:head>
 
 <main class="content">
-	<section id="hero" class="hero is-link is-medium has-background-primary">
+	<section id="hero" class="hero is-primary is-medium">
+		<!-- <section id="hero" class="hero is-primary is-medium has-background-primary"> -->
 		<div class="hero-body">
-			<p class="title">
-				La vera forza di una società risiede nella sua capacità di inclusione e solidarietà.
-				Dobbiamo lavorare insieme per costruire un futuro migliore per ogni cittadino, senza
-				lasciare nessuno indietro, specialmente i piu' deboli ed emarginati.
-			</p>
-			<p class="subtitle">Tina Anselmi</p>
+				<p class="title is-4 is-italic">
+					La vera forza di una società risiede nella sua capacità di inclusione e solidarietà.
+					Dobbiamo lavorare insieme per costruire un futuro migliore per ogni cittadino, senza
+					lasciare nessuno indietro, specialmente i piu' deboli ed emarginati.
+				</p>
+				<p class="subtitle has-text-right is-5">Tina Anselmi</p>
 		</div>
 	</section>
-	<section id="title" class="section">
-		<h1 class="title is-1">Confronti - Lista civica Fumane</h1>
-		<h2 class="subtitle is-2">Elezioni amministrative 8-9 Giugno 2024</h2>
+	<section id="home" class="section">
+		<h1 class="title is-1">{data.home?.content.title}</h1>
+		<h2 class="subtitle is-2">{data.home?.content.subtitle}</h2>
 		<figure class="image is-3by2 block">
-			<img
-				src="https://a.storyblok.com/f/266884/1104x736/763158d47c/copertina_crop.jpg"
-			/>
+			<img src={data.home?.content.image?.filename} alt={data.program?.content.image?.alt} />
 		</figure>
 		<p>
-			In questi mesi abbiamo trascorso insieme molte giornate intense di confronti, per capire le
-			esigenze, i desideri, i problemi del Comune di Fumane, raccogliendo idee ed elaborando
-			progetti, per rivitalizzare il nostro amato territorio, capoluogo e frazioni.
-		</p>
-
-		<p>
-			È nata così l’idea di chiamare la nostra lista civica Confronti, un gruppo di persone animate
-			dall’interesse per il proprio Comune, lontane dalla classica logica di opposizione politica,
-			che vogliono concentrarsi per una nuova idea di gestione amministrativa, tenendo conto delle
-			esigenze dei cittadini e cittadine.
+			{@html renderRichText(data.home?.content.description)}
 		</p>
 	</section>
 
 	<section id="programma" class="section">
-		<h2 class="title is-2">Programma</h2>
+		<h2 class="title is-2">{data.program?.content.title}</h2>
 		<figure class="image is-2by1 block">
 			<img
-				src={`${data.program.content.image?.filename}/m/1104x552/smart`}
-				alt={data.story?.content.image?.alt}
+				src={`${data.program?.content.image?.filename}/m/1104x552/smart`}
+				alt={data.program?.content.image?.alt}
 			/>
 		</figure>
 		<p>
-			Abbiamo lavorato intensamente sui temi più attuali - la sostenibilità ambientale, l'educazione
-			civica e sociale, il valore del tempo e delle risorse umane, dei rapporti sociali e degli
-			spazi che ci circondano - per trovare e valorizzare il "genius loci", l'anima di Fumane.
-			Potete leggere il nostro programma, realizzato con il contributo di tante persone.
+			{@html renderRichText(data.program?.content.description)}
 		</p>
 		<div class="buttons">
 			{#each data.program?.content.sections ?? [] as section, i}
@@ -73,20 +62,34 @@
 	</section>
 
 	<section id="candidati" class="section">
-		<h2 class="title is-2">Candidati</h2>
+		<h2 class="title is-2">{data.candidates?.content.title}</h2>
 		<figure class="image is-2by1 block">
 			<img
-				src={`${data.candidates.content.image?.filename}/m/1104x552/smart`}
+				src={`${data.candidates?.content.image?.filename}/m/1104x552/smart`}
+				alt={data.candidates?.content.image?.alt}
 			/>
 		</figure>
-		<p>Questa è la squadra che si è formata in vari incontri e contatti.</p>
-
 		<p>
-			Sono orgogliosa di questo gruppo costituito da persone sia giovani che mature, ma tutte ricche
-			di entusiasmo e competenze e rappresentative del territorio.
+			{@html renderRichText(data.candidates?.content.description)}
 		</p>
-		<a href="/candidati">
-			<button class="button is-primary is-fullwidth">Scopri la nostra lista</button>
+		<a href="/{data.candidates?.content.link}">
+			<button class="button is-primary is-fullwidth">{data.candidates?.content.button}</button>
+		</a>
+	</section>
+
+	<section id="eventi" class="section">
+		<h2 class="title is-2">{data.events?.content.title}</h2>
+		<figure class="image is-2by1 block">
+			<img
+				src={`${data.events?.content.image?.filename}/m/1104x552/smart`}
+				alt={data.events?.content.image?.alt}
+			/>
+		</figure>
+		<p>
+			{@html renderRichText(data.events?.content.description)}
+		</p>
+		<a href="/{data.events?.content.link}">
+			<button class="button is-primary is-fullwidth">{data.events?.content.button}</button>
 		</a>
 	</section>
 </main>
