@@ -47,7 +47,7 @@
 						<div use:melt={$content(id)} transition:slide>
 							<div class="card-content">
 								<div class="content">
-									{data.story?.content.description}
+									{@html renderRichText(section.content)}
 								</div>
 							</div>
 						</div>

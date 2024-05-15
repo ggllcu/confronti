@@ -127,7 +127,7 @@
       "name": "Eventi",
       "display_name": null,
       "created_at": "2023-12-12T19:35:30.212Z",
-      "updated_at": "2024-01-26T15:13:08.407Z",
+      "updated_at": "2024-05-14T00:12:24.169Z",
       "id": 5028072,
       "schema": {
         "title": {
@@ -136,10 +136,15 @@
           "key": "title",
           "pos": 0
         },
+        "link": {
+          "type": "multilink",
+          "display_name": "Asset Link"
+        },
         "description": {
-          "type": "markdown",
+          "type": "richtext",
           "key": "description",
-          "pos": 1
+          "pos": 1,
+          "display_name": "Descrizione"
         },
         "image": {
           "type": "asset",
@@ -166,10 +171,6 @@
           "display_name": "Allegato",
           "key": "Allegato",
           "pos": 5
-        },
-        "link": {
-          "type": "multilink",
-          "display_name": "Asset Link"
         }
       },
       "image": null,
@@ -180,6 +181,52 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Eventi",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "Home",
+      "display_name": null,
+      "created_at": "2024-05-13T23:50:41.425Z",
+      "updated_at": "2024-05-13T23:51:21.747Z",
+      "id": 5788720,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "key": "title",
+          "required": true
+        },
+        "subtitle": {
+          "type": "text",
+          "pos": 1,
+          "display_name": "Sottotitolo"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "display_name": "Immagine"
+        },
+        "description": {
+          "type": "richtext",
+          "pos": 3,
+          "display_name": "Descrizione",
+          "key": "description",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Home",
       "component_group_uuid": null,
       "color": null,
       "icon": null,
@@ -340,14 +387,14 @@
       "name": "Sezione Programma",
       "display_name": null,
       "created_at": "2023-12-12T19:41:16.175Z",
-      "updated_at": "2024-05-12T15:46:09.169Z",
+      "updated_at": "2024-05-14T19:43:29.824Z",
       "id": 5028113,
       "schema": {
         "title": {
           "type": "text"
         },
         "content": {
-          "type": "markdown",
+          "type": "richtext",
           "rich_markdown": true
         }
       },

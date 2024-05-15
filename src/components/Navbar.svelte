@@ -10,7 +10,7 @@
 	}
 </script>
 
-<nav class="navbar is-primary has-text-white" aria-label="main navigation">
+<nav class="navbar is-primary has-text-white is-fixed-top has-shadow py-3" aria-label="main navigation">
 	<div class="container is-max-desktop">
 		<div class="navbar-brand">
 			<a class="navbar-item" href="/">

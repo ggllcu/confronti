@@ -66,16 +66,35 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
 export interface EventiStoryblok {
   title?: string;
-  description?: string;
+  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
+  description?: RichtextStoryblok;
   image?: AssetStoryblok;
   date: string;
   place?: string;
   asset?: AssetStoryblok;
-  link?: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   _uid: string;
   component: "Eventi";
+  [k: string]: any;
+}
+
+export interface HomeStoryblok {
+  title: string;
+  subtitle?: string;
+  image?: AssetStoryblok;
+  description: RichtextStoryblok;
+  _uid: string;
+  component: "Home";
   [k: string]: any;
 }
 
@@ -87,15 +106,6 @@ export interface NewsStoryblok {
   description?: string;
   _uid: string;
   component: "News";
-  [k: string]: any;
-}
-
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
   [k: string]: any;
 }
 
@@ -122,7 +132,7 @@ export interface ProgrammaStoryblok {
 
 export interface SezioneProgrammaStoryblok {
   title?: string;
-  content?: string;
+  content?: RichtextStoryblok;
   _uid: string;
   component: "Sezione Programma";
   [k: string]: any;
