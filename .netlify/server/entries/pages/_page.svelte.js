@@ -1,0 +1,18 @@
+import { c as create_ssr_component, e as escape, b as add_attribute, d as each } from "../../chunks/ssr.js";
+import { renderRichText } from "@storyblok/js";
+function createSlug(title) {
+  return title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+}
+const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { data } = $$props;
+  if ($$props.data === void 0 && $$bindings.data && data !== void 0)
+    $$bindings.data(data);
+  return `${$$result.head += `<!-- HEAD_svelte-6sjq8c_START -->${$$result.title = `<title>Confronti 2024</title>`, ""}<meta name="description" content="Il sito del gruppo di Fumane Confronti per le elezioni comunali 2024"><!-- HEAD_svelte-6sjq8c_END -->`, ""} <div><section id="title" class="section has-text-centered"><h1 class="subtitle is-1">${escape(data.home?.content.title)}</h1></section> <section id="quote" class="section content is-medium has-background-primary" data-svelte-h="svelte-x2mjbc"> <blockquote><p class="subtitle is-5 is-italic">La vera forza di una società risiede nella sua capacità di inclusione e solidarietà.
+				Dobbiamo lavorare insieme per costruire un futuro migliore per ogni cittadino, senza
+				lasciare nessuno indietro, specialmente i piu&#39; deboli ed emarginati.</p> <p class="subtitle has-text-right is-5">Tina Anselmi</p></blockquote></section> <section id="home" class="section content"><h2 class="title is-2">${escape(data.home?.content.subtitle)}</h2> <figure class="image is-3by2 block"><img${add_attribute("src", data.home?.content.image?.filename, 0)}${add_attribute("alt", data.program?.content.image?.alt, 0)}></figure> <p><!-- HTML_TAG_START -->${renderRichText(data.home?.content.description)}<!-- HTML_TAG_END --></p></section> <section id="programma" class="section content"><h2 class="title is-2">${escape(data.program?.content.title)}</h2> <figure class="image is-2by1 block"><img${add_attribute("src", `${data.program?.content.image?.filename}/m/1104x552/smart`, 0)}${add_attribute("alt", data.program?.content.image?.alt, 0)}></figure> <p><!-- HTML_TAG_START -->${renderRichText(data.program?.content.description)}<!-- HTML_TAG_END --></p> <div class="buttons">${each(data.program?.content.sections ?? [], (section, i) => {
+    return `<a href="${"/programma#" + escape(createSlug(section.title), true)}"><button class="button is-primary is-outlined is-fullwidth">${escape(section.title)}</button> </a>`;
+  })}</div></section> <section id="candidati" class="section content"><h2 class="title is-2">${escape(data.candidates?.content.title)}</h2> <figure class="image is-2by1 block"><img${add_attribute("src", `${data.candidates?.content.image?.filename}/m/1104x552/smart`, 0)}${add_attribute("alt", data.candidates?.content.image?.alt, 0)}></figure> <p><!-- HTML_TAG_START -->${renderRichText(data.candidates?.content.description)}<!-- HTML_TAG_END --></p> <a href="${"/" + escape(data.candidates?.content.link, true)}"><button class="button is-primary is-fullwidth">${escape(data.candidates?.content.button)}</button></a></section> <section id="eventi" class="section content"><h2 class="title is-2">${escape(data.events?.content.title)}</h2> <figure class="image is-2by1 block"><img${add_attribute("src", `${data.events?.content.image?.filename}/m/1104x552/smart`, 0)}${add_attribute("alt", data.events?.content.image?.alt, 0)}></figure> <p><!-- HTML_TAG_START -->${renderRichText(data.events?.content.description)}<!-- HTML_TAG_END --></p> <a href="${"/" + escape(data.events?.content.link, true)}"><button class="button is-primary is-fullwidth">${escape(data.events?.content.button)}</button></a></section></div>`;
+});
+export {
+  Page as default
+};

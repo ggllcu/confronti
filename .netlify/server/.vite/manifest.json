@@ -1,0 +1,227 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_exports.js"
+    ]
+  },
+  "_create.js": {
+    "file": "chunks/create.js",
+    "name": "create",
+    "imports": [
+      "_index.js",
+      "_ssr.js"
+    ]
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js",
+    "name": "ssr"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_client.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_exports.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_client.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.D95ni1AV.css"
+    ]
+  },
+  "src/routes/+layout.ts": {
+    "file": "entries/pages/_layout.ts.js",
+    "name": "entries/pages/_layout.ts",
+    "src": "src/routes/+layout.ts",
+    "isEntry": true
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/+page.ts": {
+    "file": "entries/pages/_page.ts.js",
+    "name": "entries/pages/_page.ts",
+    "src": "src/routes/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/candidati/+page.svelte": {
+    "file": "entries/pages/candidati/_page.svelte.js",
+    "name": "entries/pages/candidati/_page.svelte",
+    "src": "src/routes/candidati/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/candidati/+page.ts": {
+    "file": "entries/pages/candidati/_page.ts.js",
+    "name": "entries/pages/candidati/_page.ts",
+    "src": "src/routes/candidati/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/candidati/[candidato]/+page.svelte": {
+    "file": "entries/pages/candidati/_candidato_/_page.svelte.js",
+    "name": "entries/pages/candidati/_candidato_/_page.svelte",
+    "src": "src/routes/candidati/[candidato]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/candidati/[candidato]/+page.ts": {
+    "file": "entries/pages/candidati/_candidato_/_page.ts.js",
+    "name": "entries/pages/candidati/_candidato_/_page.ts",
+    "src": "src/routes/candidati/[candidato]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/chi-siamo/+page.svelte": {
+    "file": "entries/pages/chi-siamo/_page.svelte.js",
+    "name": "entries/pages/chi-siamo/_page.svelte",
+    "src": "src/routes/chi-siamo/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/chi-siamo/+page.ts": {
+    "file": "entries/pages/chi-siamo/_page.ts.js",
+    "name": "entries/pages/chi-siamo/_page.ts",
+    "src": "src/routes/chi-siamo/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/eventi/+page.svelte": {
+    "file": "entries/pages/eventi/_page.svelte.js",
+    "name": "entries/pages/eventi/_page.svelte",
+    "src": "src/routes/eventi/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_create.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/eventi/+page.ts": {
+    "file": "entries/pages/eventi/_page.ts.js",
+    "name": "entries/pages/eventi/_page.ts",
+    "src": "src/routes/eventi/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/eventi/[evento]/+page.svelte": {
+    "file": "entries/pages/eventi/_evento_/_page.svelte.js",
+    "name": "entries/pages/eventi/_evento_/_page.svelte",
+    "src": "src/routes/eventi/[evento]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/eventi/[evento]/+page.ts": {
+    "file": "entries/pages/eventi/_evento_/_page.ts.js",
+    "name": "entries/pages/eventi/_evento_/_page.ts",
+    "src": "src/routes/eventi/[evento]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/notizie/+page.svelte": {
+    "file": "entries/pages/notizie/_page.svelte.js",
+    "name": "entries/pages/notizie/_page.svelte",
+    "src": "src/routes/notizie/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/notizie/+page.ts": {
+    "file": "entries/pages/notizie/_page.ts.js",
+    "name": "entries/pages/notizie/_page.ts",
+    "src": "src/routes/notizie/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/notizie/[notizia]/+page.svelte": {
+    "file": "entries/pages/notizie/_notizia_/_page.svelte.js",
+    "name": "entries/pages/notizie/_notizia_/_page.svelte",
+    "src": "src/routes/notizie/[notizia]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "src/routes/notizie/[notizia]/+page.ts": {
+    "file": "entries/pages/notizie/_notizia_/_page.ts.js",
+    "name": "entries/pages/notizie/_notizia_/_page.ts",
+    "src": "src/routes/notizie/[notizia]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/programma/+page.svelte": {
+    "file": "entries/pages/programma/_page.svelte.js",
+    "name": "entries/pages/programma/_page.svelte",
+    "src": "src/routes/programma/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_create.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/programma/+page.ts": {
+    "file": "entries/pages/programma/_page.ts.js",
+    "name": "entries/pages/programma/_page.ts",
+    "src": "src/routes/programma/+page.ts",
+    "isEntry": true
+  }
+}

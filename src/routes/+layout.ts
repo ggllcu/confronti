@@ -15,3 +15,5 @@ export async function load() {
       storyblokApi: storyblokApi,
     };
   }
+
+  export const prerender = true;
