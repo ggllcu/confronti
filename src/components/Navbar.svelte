@@ -45,7 +45,7 @@
 
 				<a on:click={closeMenu} class="navbar-item has-text-white" href="/programma"> Programma </a>
 
-				<a on:click={closeMenu} class="navbar-item has-text-white" href="/candidati"> Candidati </a>
+				<a on:click={closeMenu} class="navbar-item has-text-white" href="/candidati"> La lista </a>
 
 				<a on:click={closeMenu} class="navbar-item has-text-white" href="/eventi"> Eventi </a>
 
