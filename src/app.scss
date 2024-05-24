@@ -16,6 +16,7 @@
 @use 'bulma/sass/elements/image';
 @use 'bulma/sass/elements/block';
 @use 'bulma/sass/elements/button';
+@use 'bulma/sass/elements/box';
 // @use 'bulma/sass/elements/other';
 @use 'bulma/sass/elements/title';
 @use 'bulma/sass/elements/tag';
@@ -44,5 +45,5 @@ $primary: #007044;
 }
 
 body {
-  background-color: var(--bulma-primary-light);
+  background-color: #f5e4c5;
 }

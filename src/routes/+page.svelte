@@ -19,11 +19,8 @@
 </svelte:head>
 
 <div>
-	<section id="title" class="section has-text-centered">
-		<h1 class="subtitle is-1">{data.home?.content.title}</h1>
-	</section>
-
-	<section id="quote" class="section content is-medium has-background-primary">
+	<section id="header" class="section content is-medium has-background-custom">
+		<h1 class="subtitle is-1 has-text-centered has-text-white">{data.home?.content.title}</h1>
 		<!-- <section id="hero" class="hero is-primary is-medium has-background-primary"> -->
 		<blockquote>
 			<p class="subtitle is-5 is-italic">
@@ -97,3 +94,9 @@
 		</a>
 	</section>
 </div>
+
+<style>
+	.has-background-custom {
+		background: linear-gradient(#007044, #003D25);
+	}
+</style>

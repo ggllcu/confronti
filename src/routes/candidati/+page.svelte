@@ -13,7 +13,6 @@
 <section class="section content">
 	<h1 class="title is-1">{data.candidates?.content.title}</h1>
 	{@html renderRichText(data.candidates?.content.description)}
-</section>
 
 <div class="columns is-multiline">
 	{#each data.stories ?? [] as story}
@@ -27,13 +26,14 @@
 				<div class="card-content">
 					<div class="content">
 						<h2 class="title is-4">{story.content.title}</h2>
-						<p>{story.content.intro}</p>
+						<p>{story.content.description}</p>
 					</div>
 				</div>
-				<footer class="card-footer">
+				<!-- <footer class="card-footer">
 					<a href={story.full_slug} class="card-footer-item">Scopri di più</a>
-				</footer>
+				</footer> -->
 			</div>
 		</div>
 	{/each}
 </div>
+</section>
