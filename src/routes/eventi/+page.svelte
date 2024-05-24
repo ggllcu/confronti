@@ -42,7 +42,7 @@
 						use:melt={$trigger(triggerItem.id)}
 						class={$value === triggerItem.id ? 'is-active' : ''}
 					>
-						<a>{triggerItem.title}</a>
+						<a href="#">{triggerItem.title}</a>
 						{#if $value === triggerItem.id}
 							<div in:send={{ key: 'trigger' }} out:receive={{ key: 'trigger' }} />
 						{/if}
